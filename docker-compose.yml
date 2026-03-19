@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: advanced_data_mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: advanced_data_lab
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
