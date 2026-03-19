@@ -1,32 +1,27 @@
-from app.models.post import Post
 from app.db.repositories.post_repository import PostRepository
+from app.services.youtube_api_service import YouTubeAPIService
 
 
 def main():
     repo = PostRepository()
+    youtube_service = YouTubeAPIService()
 
-    sample_post = Post(
-        source="test_source",
-        collection_method="manual_test",
-        topic="docker_mongo_check",
-        title="First test post",
-        text="This is a test record stored after Docker Mongo setup.",
-        author="Ilan",
-        created_at="2026-03-19",
-        url="http://example.com/test-post-1",
-        extra={"note": "initial repository test"}
+    query = "chatgpt"
+    posts = youtube_service.collect_posts_for_query(
+        query=query,
+        videos_limit=5,
+        comments_per_video=5
     )
 
-    result = repo.insert_post(sample_post.to_dict())
+    inserted = repo.insert_many([post.to_dict() for post in posts])
 
-    if result is not None:
-        print("Post inserted successfully.")
-    else:
-        print("Post already exists.")
+    print(f"Collected {len(posts)} records from YouTube API")
+    print(f"Inserted {inserted} new records into MongoDB")
 
-    all_posts = repo.get_all()
-    print("\nAll posts in DB:")
-    for post in all_posts:
+    saved_posts = repo.find_by_source("youtube")
+    print(f"Total YouTube records in DB: {len(saved_posts)}")
+
+    for post in saved_posts[:3]:
         print(post)
 
 
