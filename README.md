@@ -54,7 +54,6 @@ Make sure Docker is installed and running.
 
 Run MongoDB container:
 
-```bash
 docker run -d -p 27017:27017 --name mongo-gpt mongo
 
 
