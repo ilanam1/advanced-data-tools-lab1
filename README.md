@@ -19,30 +19,6 @@ The collected data is stored in a **MongoDB database (Docker container)** and pr
   - Top topics
   - Top authors / channels
 
----
-
-## 🧱 Project Architecture
-
-The system follows a layered architecture:
-# 📊 GPT Social Media Data Collection & Analysis System
-
-## 📌 Project Overview
-This project is a data collection and analysis system that gathers GPT-related content from multiple social media platforms:
-
-- 🔵 YouTube — using YouTube Data API  
-- 🔴 Reddit — using Selenium web scraping  
-
-The collected data is stored in a **MongoDB database (Docker container)** and presented through a **GUI dashboard** that allows users to:
-
-- Collect data from different sources
-- Store data in MongoDB
-- Analyze the dataset using built-in queries
-- View insights such as:
-  - Posts per month
-  - Distribution by source
-  - Collection methods (API vs Scraping)
-  - Top topics
-  - Top authors / channels
 
 ---
 
