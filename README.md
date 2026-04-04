@@ -46,29 +46,6 @@ app/
 - Tkinter (GUI)
 - PyMongo
 
----
-
-## 🐳 Step 1 — Run MongoDB (Docker)
-
-Make sure Docker is installed and running.
-
-Run MongoDB container:
-
-docker run -d -p 27017:27017 --name mongo-gpt mongo
-
-
----
-
-## ⚙️ Technologies Used
-
-- Python 3.x
-- MongoDB (Docker)
-- Selenium
-- YouTube Data API
-- Tkinter (GUI)
-- PyMongo
-
----
 
 ## 🐳 Step 1 — Run MongoDB (Docker)
 
@@ -76,7 +53,6 @@ Make sure Docker is installed and running.
 
 Run MongoDB container: 
 
-```bash
 docker run -d -p 27017:27017 --name mongo-gpt mongo
 
 ## 📦 Step 2 — Install Dependencies
